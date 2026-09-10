@@ -22,6 +22,6 @@ myForm.addEventListener("submit", (event) => {
   targetAvgPricePerTitre = parseFloat(formData.get("targetAvgPricePerTitre"));
   actualPriceTitreToBuy = parseFloat(formData.get("actualPriceTitreToBuy"));
   const result = calculatorTitre(actualNbreTitreEnPortefeuille, avgPricePerTitreEnProtefeuille, targetAvgPricePerTitre, actualPriceTitreToBuy);
-  document.getElementById("result").innerHTML = result>= 0 ? `Nombre de titres à acheter: <span>${Math.round(result)}</span> titres au prix de <span>${actualPriceTitreToBuy}€</span> pour atteindre un prix moyen de <span>${targetAvgPricePerTitre}€</span> par titre.`: `Le prix moyen cible est déjà atteint ou dépassé. Aucun achat nécessaire.`;
+  document.getElementById("result").innerHTML = result>= 0 ? `Nombre de titres à acheter: <span>${Math.round(result)}</span> titres au prix de <span>${actualPriceTitreToBuy}€</span> pour un montant total de <span>${Math.round(result)*actualPriceTitreToBuy*fraisCourtage}</span> vous permettra d'atteindre un prix moyen de <span>${targetAvgPricePerTitre}€</span> par titre.`: `Le prix moyen cible est déjà atteint ou dépassé. Aucun achat nécessaire.`;
 
 });
